@@ -1,3 +1,4 @@
 .env
 /joint_dataset
+/custom_joint_dataset
 /restormer
