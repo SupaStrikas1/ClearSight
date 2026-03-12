@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add any global styles if needed */
+body {
+  font-family: 'Inter', sans-serif; /* Clean modern font */
+}
+
+@keyframes indeterminate {
+  0%   { transform: translateX(-100%) scaleX(0.2); }
+  40%  { transform: translateX(0%)    scaleX(0.4); }
+  100% { transform: translateX(100%)  scaleX(0.2); }
+}
+
+.animate-\[indeterminate_2s_infinite_linear\] {
+  animation: indeterminate 2s infinite linear;
+}
