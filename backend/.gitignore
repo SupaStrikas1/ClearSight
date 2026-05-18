@@ -1,3 +1,6 @@
+node_modules/
+**/node_modules/
+backend/node_modules/
 .env
 /joint_dataset
 /custom_joint_dataset

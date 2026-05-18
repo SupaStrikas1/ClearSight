@@ -79,7 +79,7 @@ router.post(
 
       await fs.writeFile(tempInputPath, req.file.buffer);
 
-      const pythonPath = "C:\\Abhinand\\miniconda3\\envs\\nafnet\\python.exe";
+      const pythonPath = process.env.PYTHON_PATH || "python3";
       const nafnetCwd = path.join(__dirname, "..", "nafnet"); // Updated path
       const inferenceScript = path.join(nafnetCwd, "custom_inference.py");
 
@@ -93,7 +93,7 @@ router.post(
         `"${pythonPath}" "${inferenceScript}" ` +
           `--input "${tempInputPath}" ` +
           `--output "${tempOutputPath}" ` +
-          `--model "experiments/pretrained_models/net_g_22000.pth"`,
+          `--model "experiments/pretrained_models/net_g_42000.pth"`,
         {
           cwd: nafnetCwd,
           env: {

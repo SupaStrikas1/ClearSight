@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: clearsight-backend
+    runtime: python
+    buildCommand: |
+      pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+      pip install opencv-python-headless numpy scikit-image
+      pip install -r nafnet/requirements.txt
+      cd nafnet && pip install -e . --no-build-isolation
+      npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
